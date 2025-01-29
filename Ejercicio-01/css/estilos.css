@@ -1,0 +1,391 @@
+*{
+    border: 0;
+    margin: 0;
+    padding: 0;
+    /* background-color: rgb(66, 30, 30); */
+}
+
+main{
+    width: 90%;
+    margin: 2em auto;
+    background-color: bisque;
+}
+
+form{
+    width: 100%;
+    margin: 0 auto;
+    padding: 2.5em;
+    align-self: center;
+    
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em;
+    align-items: center;
+    background-color: white;
+    border: red solid 0.05em;
+    height: 18em;
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 2.5%;
+}
+
+.formulario input{
+    border: rgb(168, 36, 36) 0.03em solid;
+    border-style: none none solid none;
+    margin: 1em;
+    width: 20em;
+    height: 3.5em;
+    align-self: center;
+    padding: 0.9em;
+
+}
+
+
+#enviar {
+    border: rgb(168, 36, 36) 0.03em solid;
+    padding: 1em;
+    margin: 3.5em 0;
+    color: red;
+    width: 35%;
+    align-self: center;
+}
+
+
+h4{
+    margin-right: 10em;
+    color: red;
+}
+
+p{
+    text-align: center;
+}
+
+.tabla{
+    margin: 2em auto;
+    border-collapse: collapse;
+    border: black 0.2em solid;
+    background-color: white;
+    text-align: center;
+    width: 100%;
+}
+
+caption{
+    font-size: 2em;
+}
+
+.tabla th{
+    background-color: rgb(179, 50, 50);
+    padding: 0.3em;
+    color: white;
+}
+
+.titulos{
+    border: black 0.2em solid;
+}
+
+.datos td{
+    border: black 0.2em solid;
+}
+
+.tabla td{
+    padding: 0.5em;
+
+}
+
+#articleTabla{
+    background-color: bisque;
+    padding: 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+}
+
+/* DATOS LISTADO DE USUARIOS */
+.datos img{
+    width: 30px;
+}
+
+/*Esto de aca lo tengo que sacar*/
+p{
+    text-align: center;
+    font-size: 2em;
+    padding-top: 3em;
+    background-color: bisque;
+    height: 10em;
+}
+/* --- */
+
+
+#menu{
+    background-color: bisque;
+    width: 25%;
+    margin-bottom: 2em;
+}
+
+#menu h2{
+    text-align: center;
+    margin: 1em;
+}
+
+#menu article{
+    background-color: bisque;
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+ul li{
+    list-style: none;
+    margin: 1em auto;
+
+}
+
+ul li a{
+    font-size: 1.12em;
+    text-decoration: none;
+    margin: 1em auto;
+    padding: 0.75em;
+    background-color: rgb(179, 50, 50);
+    color: whitesmoke;
+    width: 3em;
+    border: solid black 0.01em;
+}
+
+.articlePrincipal{
+    display: flex;
+    flex-direction: row;
+}
+
+.formularioPelicula{
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em;
+    align-items: center;
+    background-color: white;
+    border: red solid 0.05em;
+    height: 30em;
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 2.5%;
+}
+
+.formularioPelicula input, .formularioPelicula select{
+    border: rgb(168, 36, 36) 0.03em solid;
+    border-style: none none solid none;
+    margin: 1em;
+    width: 20em;
+    height: 3.5em;
+    align-self: center;
+    padding: 0.9em;
+
+}
+
+.formularioPelicula h4{
+    margin-right: 1em;
+    text-align: center;
+    color: red;
+}
+
+/* CSS PARA PELICULA_LISTADO */
+
+.listadoPeliculas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1em;
+    width: 75%;
+}
+
+.articlePeliculaIndividual{
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    background-color: rgb(212, 192, 167);
+    width: 1000px;
+}
+
+.pPelicula{
+    text-align: left;
+    padding-top: 2em;
+    margin: 0em 0em 2em 1em;
+    font-size: 1em;
+    height: 1em;
+    background-color: rgb(212, 192, 167);
+}
+
+.tituloPelicula{
+    font-size: 2em;
+    color: black;
+    margin-left: 0.5em;
+    margin-top: 0.5em;
+    width: 100%;
+}
+
+.portadaPelicula{
+    margin: 1em;
+    width: 300px;
+}
+
+.portadaPelicula img{
+    width: 100%;
+}
+
+.opcionesPelicula{
+    display: flex;
+    flex-direction: row;
+    width: 50px;
+    margin: 1em;
+    margin-top: 1.5em;
+}
+
+.opcionesPelicula img{
+    width: 50px;
+    margin-top: 1.25em;
+}
+
+/* CSS PARA CONFIRMAR_BORRAR Y BORRAR */
+
+.confirmarBorrarArticle{
+    text-align: center;
+}
+
+.confirmarBorrarArticle h2{
+    margin: 2em auto;
+}
+
+.confirmarBorrarArticle p{
+    height: 1em;
+    padding-top: 0.2em;
+    margin: 2.5em;
+}
+
+.confirmarBorrarArticle a, .botonModificarCancelar{
+    font-size: 1.12em;
+    text-decoration: none;
+    margin: 2em;
+    padding: 0.75em;
+    background-color: rgb(179, 50, 50);
+    color: whitesmoke;
+    width: 3em;
+    border: solid black 0.01em;
+}
+
+/* p GENERICOS */
+
+.pAviso{
+    width: 75%;
+    height: 1em;
+    padding-top: 1em;
+    margin: 1.5em;
+}
+
+/* CSS PARA MODIFICAR */
+
+.modificarArticle{
+    display: flex;
+    flex-direction: row;
+    background-color: bisque;
+    margin-bottom: 5em;
+}
+
+.botonModificarCancelar{
+    margin-top: 3em;
+    width: 5em;
+    height: 2em;
+}
+
+/* CSS PARA ESPACIO DE USUARIO */
+
+#usuario{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2em;
+    margin-left: 1em;
+    border: solid 0.2em rgb(179, 50, 50);
+    border-style: none none solid none;
+}
+
+#usuario a{
+    margin: 0.7em;
+    margin-top: 1.2em;
+}
+
+#usuario p{
+    font-size: 1em;
+    text-align: center;
+    align-self: center;
+    height: 0.1;
+    padding-top: 0.01em;
+    padding-bottom: 0.5em;
+}
+
+#usuario figure{
+    margin: 0.5em;
+}
+
+#usuario figure img{
+    width: 2em;
+}
+
+/* CSS PARA PELICULA_FAVORTIO */
+
+/* Es el mismo css que para listado */
+
+
+/* CSS PARA CONTACTENOS */
+
+.formularioCorreo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(212, 192, 167);
+    border: 0.03em solid rgb(179, 50, 50);
+}
+
+.formularioCorreo h4{
+    color: rgb(9, 7, 41);
+    font-size: 1.9em;
+    margin-right: 0; 
+}
+
+.formularioCorreo label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.2em;
+    margin: 1em;
+    color: rgb(9, 7, 41);
+}
+
+#men{
+    height: 200px;
+    width: 500px;
+    border: 0.03em solid rgb(179, 50, 50);
+}
+
+#mot{
+    height: 35px;
+    width: 500px;
+    border: 0.03em solid rgb(179, 50, 50);
+}
+
+/* BUSCADOR */
+
+.buscador{
+    width: 50%;
+    margin: 0 auto;
+}
+
+.buscador input{
+    border: red solid 0.02em;
+    height: 30px;
+}
