@@ -41,7 +41,7 @@
                 echo '<td><figure><img src="'.$fila['foto'].'"></figure></td>';
                 echo '<td>'.$fila['apellido'].'</td>';
                 echo '<td>'.$fila['nombres'].'</td>';
-                echo '<td>'.$fila['correo']'</td>';
+                echo '<td>'.$fila['correo'];'</td>';
 
                 echo '</tr>';
             }

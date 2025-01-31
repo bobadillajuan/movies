@@ -15,12 +15,14 @@ if (!empty($_SESSION['usuario'])) {
     $conexion = conectar();
 
     $usuario= $_POST['usuario'];
-    $contraseña = $_POST['contraseña']; 
+    $contraseña = sha1($_POST['contraseña']); 
     // Por alguna razon aqui el sha1 no me esta sirviendo
     $email = $_POST['correo'];
     $tipo = $_POST['tipo'];
     $fechaAlta = $_POST['fechaAlta'];
     
+    echo $_POST['contraseña'];
+    echo sha1($_POST['contraseña']);
 
     //Trabajamos con el archivo
 
@@ -39,18 +41,20 @@ if (!empty($_SESSION['usuario'])) {
 
 
 
-    $consulta = 'INSERT INTO usuario (usuario, password, mail, fecha_alta, tipo, foto) VALUES (\''.$usuario.'\', '.$contraseña.', \''.$email.'\', \''.$fechaAlta.'\', \''.$tipo.'\', \''.$foto_usuario.'\')'; 
+    $consulta = 'INSERT INTO usuario (usuario, password, mail, fecha_alta, tipo, foto) VALUES (\''.$usuario.'\', \''.$contraseña.'\', \''.$email.'\', \''.$fechaAlta.'\', \''.$tipo.'\', \''.$foto_usuario.'\')'; 
 
     $resultado_consulta = mysqli_query($conexion, $consulta);
+
+    echo "error tipo: ".$consulta;
 
     if ($resultado_consulta) {
            
         echo '<p class="pAviso">Consulta bien ejecutada</p>';
-        header('refresh:1; url=pelicula_alta.php');
+        header('refresh:1; url=usuario_listado.php');
 
     }else{
         echo '<p class="pAviso">Error en la consulta</p>';
-        header('refresh:3; url=pelicula_alta.php');
+        header('refresh:3; url=usuario_alta.php');
     }
 
     
