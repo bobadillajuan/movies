@@ -5,16 +5,20 @@
     /* background-color: rgb(66, 30, 30); */
 }
 
+body{
+    background-color: bisque;
+}
+
 main{
-    width: 90%;
-    margin: 2em auto;
+    /* width: 90%; */
+    margin: 0 auto;
     background-color: bisque;
 }
 
 form{
-    width: 100%;
-    margin: 0 auto;
-    padding: 2.5em;
+    /* width: 100%; */
+    /* margin: 0 auto; */
+    padding: 1.5em;
     align-self: center;
     
 }
@@ -43,7 +47,6 @@ form{
 
 }
 
-
 #enviar {
     border: rgb(168, 36, 36) 0.03em solid;
     padding: 1em;
@@ -52,7 +55,6 @@ form{
     width: 35%;
     align-self: center;
 }
-
 
 h4{
     margin-right: 10em;
@@ -91,9 +93,7 @@ caption{
 }
 
 .tabla td{
-    padding: 0.5em;
-
-}
+    padding: 0.5em;}
 
 #articleTabla{
     background-color: bisque;
@@ -120,11 +120,15 @@ p{
 }
 /* --- */
 
+.articlePrincipal{
+    display: flex;
+    flex-direction: row;
+}
 
 #menu{
     background-color: bisque;
-    width: 25%;
-    margin-bottom: 2em;
+    width: 17%;
+    padding: 2em;
 }
 
 #menu h2{
@@ -157,11 +161,6 @@ ul li a{
     color: whitesmoke;
     width: 3em;
     border: solid black 0.01em;
-}
-
-.articlePrincipal{
-    display: flex;
-    flex-direction: row;
 }
 
 .formularioPelicula{
@@ -197,19 +196,21 @@ ul li a{
 /* CSS PARA PELICULA_LISTADO */
 
 .listadoPeliculas{
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     align-items: center;
     margin: 1em;
-    width: 75%;
+    width: 80%;
 }
 
 .articlePeliculaIndividual{
     display: flex;
     flex-direction: row;
+    margin-bottom: 1em;
+    margin-right: 1em;
     /* align-items: center; */
     background-color: rgb(212, 192, 167);
-    width: 1000px;
+    width: 100%;
 }
 
 .pPelicula{
@@ -308,8 +309,6 @@ ul li a{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 2em;
-    margin-left: 1em;
     border: solid 0.2em rgb(179, 50, 50);
     border-style: none none solid none;
 }
@@ -381,11 +380,27 @@ ul li a{
 /* BUSCADOR */
 
 .buscador{
-    width: 50%;
-    margin: 0 auto;
+    /* display: flex;
+    flex-direction: row; */
+    /* width: 50%; */
+    margin: 0 auto; 
 }
 
 .buscador input{
     border: red solid 0.02em;
+    width: 300px;
     height: 30px;
 }
+
+#botonbuscador{
+width: 19.5%;
+}
+
+#espaciobuscador{
+    width: 80%;
+}
+
+
+/* id="botonbuscador" */
+/* id="espaciobuscador" */
+
