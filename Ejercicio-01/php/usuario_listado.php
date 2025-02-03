@@ -37,11 +37,11 @@
             while ($fila = mysqli_fetch_array($resultado_consulta)) {
 
                 echo '<tr class="datos">';
-                echo '<td>'.$fila['legajo'].'</td>';
-                echo '<td><figure><img src="'.$fila['foto'].'"></figure></td>';
-                echo '<td>'.$fila['apellido'].'</td>';
-                echo '<td>'.$fila['nombres'].'</td>';
-                echo '<td>'.$fila['correo'];'</td>';
+                echo '<td>'.$fila['usuario'].'</td>';
+                echo '<td><figure><img src="../img/usuarios/'.$fila['foto'].'"></figure></td>';
+                echo '<td>'.$fila['mail'].'</td>';
+                echo '<td>'.$fila['fecha_alta'].'</td>';
+                echo '<td>'.$fila['mail'].'</td>';
 
                 echo '</tr>';
             }
