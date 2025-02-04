@@ -8,6 +8,7 @@
 ?>
 
 <?php 
+
 if (!empty($_SESSION['usuario'])) { 
 
     if ($_SESSION['tipo'] == 'Administrador' or $_SESSION['tipo'] == 'Editor') {
@@ -22,8 +23,7 @@ if (!empty($_SESSION['usuario'])) {
 
     desconectar($conexion);
 
-
-    if (mysqli_num_rows($resultado) > 0){
+    if (mysqli_num_rows($resultado) > 0 or $id != NULL){
 
             $fila = mysqli_fetch_array($resultado);
 

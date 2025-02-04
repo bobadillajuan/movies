@@ -24,8 +24,9 @@
                 <table class="tabla">
                     <tr class="titulos">
                     <th>Usuario</th>
+                    <th>Foto</th>
                     <th>Mail</th>
-                    <th>Fecha alta</th>
+                    <th>Fecha Alta</th>
                     <th>Tipo</th>
                     <th>Modificar</th>
                     <th>Eliminar</th>
@@ -38,11 +39,17 @@
 
                 echo '<tr class="datos">';
                 echo '<td>'.$fila['usuario'].'</td>';
-                echo '<td><figure><img src="../img/usuarios/'.$fila['foto'].'"></figure></td>';
+                if ($fila['foto']) {
+                    echo '<td><figure><img src="../img/usuarios/'.$fila['foto'].'"></figure></td>';
+                }else{
+                    echo '<td><figure><img src="../img/usuarios/usuario_default.png"></figure></td>';
+                }
                 echo '<td>'.$fila['mail'].'</td>';
                 echo '<td>'.$fila['fecha_alta'].'</td>';
-                echo '<td>'.$fila['mail'].'</td>';
-
+                echo '<td>'.$fila['tipo'].'</td>';
+                //Tenemos que hacer una petición y un link para poder eliminar y modificar usuarios.
+                ?><td> <a href="usuario_modificar.php?id=<?php echo$fila['id']?>"><img src="../img/edit_pencil.png"></a> </td><?php
+                ?><td> <a href="usuario_eliminar.php?id=<?php echo$fila['id']?>"><img src="../img/trash_empty.png"></a> </td><?php
                 echo '</tr>';
             }
     
