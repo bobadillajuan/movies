@@ -119,7 +119,7 @@ if (!empty($_SESSION['usuario'])) {
     desconectar($conexion);
 
 } else {
-    echo '<h2>No inició sesión</h2>';
+    echo '<h2>No inició sesión, inicie sesión y pruebe de nuevo</h2>';
     header('refresh:3; ../index.php');
 }
 
