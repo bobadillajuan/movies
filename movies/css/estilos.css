@@ -93,7 +93,8 @@ caption{
 }
 
 .tabla td{
-    padding: 0.5em;}
+    /* padding: 0.5em; */
+}
 
 #articleTabla{
     background-color: bisque;
@@ -101,8 +102,7 @@ caption{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-
+    width: 70%;
 }
 
 /* DATOS LISTADO DE USUARIOS */
@@ -127,7 +127,8 @@ p{
 
 #menu{
     background-color: bisque;
-    width: 17%;
+    width: 20%!important;
+    flex-shrink: 0;
     padding: 2em;
 }
 
@@ -200,14 +201,15 @@ ul li a{
     flex-direction: column;
     align-items: center;
     margin: 1em 1em 1em 0;
-    width: 80%;
+    width: 65%;
 }
 
 .articlePeliculaIndividual{
     display: flex;
     flex-direction: row;
-    margin-bottom: 1em;
-    margin-right: 1em;
+    /* margin-bottom: 1em;
+    margin-right: 1em; */
+    margin: 0 1em 1em 0;
     /* align-items: center; */
     background-color: rgb(212, 192, 167);
     width: 100%;
@@ -232,7 +234,7 @@ ul li a{
 
 .portadaPelicula{
     margin: 1em;
-    width: 300px;
+    width: 250px;
 }
 
 .portadaPelicula img{
@@ -282,7 +284,7 @@ ul li a{
 /* p GENERICOS */
 
 .pAviso{
-    width: 75%;
+    /* width: 75%; */
     height: 1em;
     padding-top: 1em;
     margin: 1.5em;
