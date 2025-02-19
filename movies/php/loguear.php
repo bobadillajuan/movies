@@ -39,7 +39,7 @@
         $_SESSION['tipo'] = $fila['tipo'];
 
         //Aviso de inicio de sesión
-        echo '<p class="pAviso">¿Incio de sesión exitoso!</p>';
+        echo '<p class="pAviso">¡Incio de sesión exitoso!</p>';
         header('refresh:0; url=pelicula_listado.php');
 
        }else{

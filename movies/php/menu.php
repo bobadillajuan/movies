@@ -43,7 +43,7 @@
         <li><a href="pelicula_listado.php">Listar pelicula</a></li>
     </ul>
     <ul>
-        <li><a href="pelicula_favorito.php">Listar favoritas</a></li>
+        <li><a href="pelicula_favorito.php?id=10000">Listar favoritas</a></li>
     </ul>
     </article>
     <article>

@@ -10,7 +10,6 @@ if (!empty($_SESSION['usuario'])) {
 
     
     if (!empty($_COOKIE[$_SESSION['usuario']]) && isset($_COOKIE[$_SESSION['usuario']])) {
-        //Aqui concateno
         setcookie($_SESSION['usuario'], $_COOKIE[$_SESSION['usuario']].','.$id, $tiempo, '/');
         echo '<p class="pAviso">Guardado Exitoso</p>';
         

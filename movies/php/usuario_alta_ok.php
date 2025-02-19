@@ -16,17 +16,10 @@ if (!empty($_SESSION['usuario'])) {
 
     $usuario= $_POST['usuario'];
     $contraseña = sha1($_POST['contraseña']); 
-    // Por alguna razon aqui el sha1 no me esta sirviendo
     $email = $_POST['correo'];
     $tipo = $_POST['tipo'];
     $fechaAlta = $_POST['fechaAlta'];
     
-    echo $_POST['contraseña'];
-    echo sha1($_POST['contraseña']);
-
-    //Trabajamos con el archivo
-
-
     if(!empty($_FILES['foto']['size']))
     {
     $nombreUsuario = $_FILES['foto']['name'];
