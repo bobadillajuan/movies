@@ -17,9 +17,11 @@ if (!empty($_SESSION['usuario'])) {
 
     <!-- Buscador de peliculas medio pelo -->
     <form action="" method="get" class="buscador">
+                <div class="contenedor_buscador">
                     <input type="search" id="espaciobuscador" name="buscador" placeholder="buscar...">
                     <input type="submit" id="botonbuscador" value="buscar">
-                </form>  
+                </div>
+            </form>  
 
     <?php
     if (!empty($_GET['buscador'])) {
