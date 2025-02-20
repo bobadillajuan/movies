@@ -15,7 +15,8 @@ if (!empty($_SESSION['usuario'])) {
     $conexion = conectar();
 
     $usuario= $_POST['usuario'];
-    $contraseña = sha1($_POST['contraseña']); 
+    // $contraseña = sha1($_POST['contraseña']); 
+    $contraseña = hash("sha512", $_POST['contraseña']);
     $email = $_POST['correo'];
     $tipo = $_POST['tipo'];
     $fechaAlta = $_POST['fechaAlta'];
@@ -55,6 +56,7 @@ if (!empty($_SESSION['usuario'])) {
 
     }else{
         echo '<p><strong> Faltan datos </strong></p>';
+        header('refresh:3; url=usuario_alta.php');
     }
 
 } else {

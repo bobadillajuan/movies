@@ -95,11 +95,7 @@ if (!empty($_SESSION['usuario'])) {
                             ?>
                         </figure>
                     </article>
-
-
-                </article>
-            
-
+                    </article>
                 <?php
                 
             }

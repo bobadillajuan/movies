@@ -12,7 +12,8 @@
     $conexion = conectar();
 
     $usuario = $_POST['usua'];
-    $contraseña = sha1($_POST['cont']);
+    // $contraseña = sha1($_POST['cont']);
+    $contraseña = hash("sha512", $_POST['cont']);
     // $contraseña = $_POST['cont'];
 
     //En esta consulta se pide que coincidan los datos de la tabla con los enviados desde la página
