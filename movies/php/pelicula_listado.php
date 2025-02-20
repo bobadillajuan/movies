@@ -107,8 +107,8 @@ if (!empty($_SESSION['usuario'])) {
             echo '</section>';
 
        }else{
-           echo '<p>No encontramos el usuario</p>';
-           header('refresh:4; url=../index.php');
+           echo '<p>No se encontraron peliculas!</p>';
+           header('refresh:2; url=pelicula_listado.php');
 
        }
 
