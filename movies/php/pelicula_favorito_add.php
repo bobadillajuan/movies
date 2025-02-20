@@ -10,8 +10,26 @@ if (!empty($_SESSION['usuario'])) {
 
     
     if (!empty($_COOKIE[$_SESSION['usuario']]) && isset($_COOKIE[$_SESSION['usuario']])) {
-        setcookie($_SESSION['usuario'], $_COOKIE[$_SESSION['usuario']].','.$id, $tiempo, '/');
+
+        $favoritas = $_COOKIE[$_SESSION['usuario']];
+        $favoritasArreglo = explode(',', $favoritas);
+        var_dump($favoritasArreglo);
+
+        foreach ($favoritasArreglo as $clave => $valor){
+            if ($valor == $id) {
+                $id = 0;
+                break;
+            }
+        }
+
+        if ($id != 0) {
         echo '<p class="pAviso">Guardado Exitoso</p>';
+        setcookie($_SESSION['usuario'], $_COOKIE[$_SESSION['usuario']].','.$id, $tiempo, '/');
+        }else{
+        echo '<p class="pAviso">Pelicula ya guardada!</p>';
+        header('refresh:2; url=pelicula_listado.php');
+        }
+
         
     }else{
         setcookie($_SESSION['usuario'], $id, $tiempo, '/');

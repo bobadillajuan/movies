@@ -19,7 +19,6 @@ if (!empty($_SESSION['usuario'])) {
             $favoritasArreglo = array_diff($favoritasArreglo, array($id));
             $favoritas = implode(",", $favoritasArreglo);
 
-
             $tiempo = time() + 60 * 24 * 60 * 60;
             setcookie($_SESSION['usuario'], $favoritas, $tiempo, '/');
 
@@ -100,7 +99,7 @@ if (!empty($_SESSION['usuario'])) {
         }
             
         }else{ //aquí podremos saber si es que seguimos normal o tenemos que borrar algo
-            
+             
         $favoritas = $_COOKIE[$_SESSION['usuario']];
         $favoritasArreglo = explode(',', $favoritas);
         $consulta = 'SELECT * FROM pelicula WHERE ';
