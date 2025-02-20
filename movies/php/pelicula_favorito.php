@@ -14,7 +14,6 @@ if (!empty($_SESSION['usuario'])) {
 
         if ($id != 10000) {
 
-            // echo $_COOKIE[$_SESSION['usuario']];
             $favoritas = $_COOKIE[$_SESSION['usuario']];
             $favoritasArreglo = explode(',', $favoritas);
             $favoritasArreglo = array_diff($favoritasArreglo, array($id));
@@ -29,11 +28,13 @@ if (!empty($_SESSION['usuario'])) {
             $consulta .= 'id=\''. $valor . '\' OR ';
         }
         $consulta = rtrim($consulta,'OR ');
+        if (empty($favoritasArreglo)) {
+            $consulta = 'SELECT * FROM pelicula WHERE id = 0';
+        }
         $resultado_consulta = mysqli_query($conexion, $consulta);
-        echo $resultado_consulta;
         desconectar($conexion);
 
-        if (mysqli_num_rows($resultado_consulta) ) {
+        if (mysqli_num_rows($resultado_consulta)) {
 
             ?>
             <section class="listadoPeliculas">
