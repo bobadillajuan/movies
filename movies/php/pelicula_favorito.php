@@ -9,7 +9,6 @@ if (!empty($_SESSION['usuario'])) {
     require_once('conexion.php');
     $conexion = conectar();
     $id = $_GET['id'];
-    echo $id.'//';
 
     if (!empty($_COOKIE[$_SESSION['usuario']]) && isset($_COOKIE[$_SESSION['usuario']])) {
 
@@ -17,7 +16,6 @@ if (!empty($_SESSION['usuario'])) {
 
             // echo $_COOKIE[$_SESSION['usuario']];
             $favoritas = $_COOKIE[$_SESSION['usuario']];
-            echo $favoritas;
             $favoritasArreglo = explode(',', $favoritas);
             $favoritasArreglo = array_diff($favoritasArreglo, array($id));
             $favoritas = implode(",", $favoritasArreglo);
@@ -26,19 +24,16 @@ if (!empty($_SESSION['usuario'])) {
             $tiempo = time() + 60 * 24 * 60 * 60;
             setcookie($_SESSION['usuario'], $favoritas, $tiempo, '/');
 
-            foreach ($favoritasArreglo as &$value) {
-                echo $value.',';
-            }
-
         $consulta = 'SELECT * FROM pelicula WHERE ';
         foreach ($favoritasArreglo as $clave => $valor){
             $consulta .= 'id=\''. $valor . '\' OR ';
         }
         $consulta = rtrim($consulta,'OR ');
         $resultado_consulta = mysqli_query($conexion, $consulta);
+        echo $resultado_consulta;
         desconectar($conexion);
 
-        if (mysqli_num_rows ($resultado_consulta)) {
+        if (mysqli_num_rows($resultado_consulta) ) {
 
             ?>
             <section class="listadoPeliculas">
@@ -71,7 +66,7 @@ if (!empty($_SESSION['usuario'])) {
                         <!-- Se supone que desde aquí tambien tengo que tener estas opciones? -->
                         <figure class="opcionesPelicula">
                         <!-- Aquí hicimos el cambio a la dirección -->
-                        <a href="pelicula_favorito.php?id=<?php echo$fila['id'];?>"><img src="../img/estrella.png"></a>
+                        <a href="pelicula_favorito.php?id=<?php echo$fila['id'];?>"><img src="../img/quitar_favoritos.png"></a>
                             <?php
                             if ($_SESSION['tipo'] == 'Administrador') {
                             ?>
@@ -149,7 +144,7 @@ if (!empty($_SESSION['usuario'])) {
                         <!-- Se supone que desde aquí tambien tengo que tener estas opciones? -->
                         <figure class="opcionesPelicula">
                         <!-- Aquí hicimos el cambio a la dirección -->
-                        <a href="pelicula_favorito.php?id=<?php echo$fila['id'];?>"><img src="../img/estrella.png"></a>
+                        <a href="pelicula_favorito.php?id=<?php echo$fila['id'];?>"><img src="../img/quitar_favoritos.png"></a>
                             <?php
                             if ($_SESSION['tipo'] == 'Administrador') {
                             ?>

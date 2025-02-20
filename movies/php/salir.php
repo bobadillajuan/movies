@@ -4,6 +4,8 @@
     require_once("../html/encabezado.html");
     if (!empty($_SESSION['usuario'])) {
         echo '<h2>Está saliendo de la sesión</h2>';
+        unset($_COOKIE[$_SESSION['usuario']]);
+        setcookie($_SESSION['usuario'], null, -1, '/');
         session_destroy();
         header('refresh:4; ../index.php');
     } else {
