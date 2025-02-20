@@ -46,12 +46,6 @@
         <li><a href="pelicula_favorito.php?id=10000">Listar favoritas</a></li>
     </ul>
     </article>
-    <article>
-    <h2>Opciones</h2>
-    <ul>
-        <li><a href="contactenos.php">Contáctenos</a></li>
-    </ul>
-    </article>
     </section>
 
 <?php
