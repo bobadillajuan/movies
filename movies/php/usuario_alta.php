@@ -18,19 +18,19 @@ if (!empty($_SESSION['usuario'])) {
         <h4>Agregar Usuario</h4>
 
     <label for="usu">Usuario:
-        <input type="text" name="usuario" id="usu"  placeholder="Ingrese el usuario nuevo" value="sha1">
+        <input type="text" name="usuario" id="usu"  placeholder="Ingrese el usuario nuevo">
     </label>
 
     <label for="cont">Contraseña: 
-        <input type="password" name="contraseña" id="cont" value="1234">
+        <input type="password" name="contraseña" id="cont" placeholder="Ingrese una contraseña">
     </label>
 
     <label for="mail">Correo:
-        <input type="email" name="correo" id="mail"  placeholder="Ingrese el email" value="sha1@gmail.com">
+        <input type="email" name="correo" id="mail"  placeholder="Ingrese el email">
     </label>
 
     <label for="fechAlta">Fecha de Alta: 
-        <input type="date" name="fechaAlta" id="fechAlta" value="2021-10-02">
+        <input type="date" name="fechaAlta" id="fechAlta">
     </label>
 
     <label for="tip">Tipo de usuario: 
