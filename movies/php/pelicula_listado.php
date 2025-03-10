@@ -12,6 +12,61 @@ if (!empty($_SESSION['usuario'])) {
     require_once('menu.php');
     require_once('conexion.php');
     $conexion = conectar();
+
+    // $data = file_get_contents('https://imdb.iamidiotareyoutoo.com/search?q=1');
+    // var_dump($data);
+    // print_r($http_response_header);
+
+    $payload = json_encode([
+        "title" => "Updated Title"
+    ]);
+
+    $headers = [
+        "Content-type: application/json; charset=UTF-8",
+        "Accept-language: en"
+    ];
+
+    // $ch = curl_init();
+    // curl_setopt_array($ch, [
+    //     CURLOPT_URL => "https://jsonplaceholder.typicode.com/albums/1",
+    //     CURLOPT_RETURNTRANSFER => "true",
+    //     CURLOPT_CUSTOMREQUEST => "PATCH",
+    //     CURLOPT_POSTFIELDS => $payload,
+    //     CURLOPT_HTTPHEADER => $headers
+    // ]);
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, "https://imdb.iamidiotareyoutoo.com/search?q=the"); //Para la API que queriamos usar, no la del tutorial.
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+    $data = curl_exec($ch);
+    
+    $status_info = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+    $decodedData = json_decode($data, true);
+    $movies = $decodedData['description'];
+
+    foreach ($movies as $key) {
+        echo "Title: " . $key["#TITLE"];
+        // var_dump($key);
+        echo "\n -----------------------------------------------------\n";
+    }
+
+
+    // var_dump($decodedData);
+
+    // foreach ($decodedData as $movie) {
+
+    //     var_dump($movie[2]);
+    //     echo "\n\n";
+    // }
+    
+    // var_dump($data);
+
+
+    echo "\n Información de error: " . $status_info;
+    curl_close($ch);
+
     ?>
     <section class="listadoPeliculas">
 
@@ -101,6 +156,8 @@ if (!empty($_SESSION['usuario'])) {
             }
 
             echo '</section>';
+
+            
 
        }else{
            echo '<p>No se encontraron peliculas!</p>';
