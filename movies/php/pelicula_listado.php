@@ -10,33 +10,11 @@
 if (!empty($_SESSION['usuario'])) { 
     
     require_once('menu.php');
-    // require_once('conexion.php');
-    // $conexion = conectar();
-
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, "https://imdb.iamidiotareyoutoo.com/search?q=the"); //Para la API que queriamos usar, no la del tutorial.
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-    $data = curl_exec($ch);
-    
-    $status_info = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-
-    $decodedData = json_decode($data, true);
-    $movies = $decodedData['description'];
-
-    foreach ($movies as $key) {
-        echo "Title: " . $key["#TITLE"];
-        echo "<img src=" .$key["#IMG_POSTER"] . ">"; 
-        // var_dump($key); 
-        echo "\n -----------------------------------------------------\n";
-    }
-
-    echo "\n Información de error: " . $status_info;
-    curl_close($ch);
+    require_once('conexion.php');
+    $conexion = conectar();
 
     ?>
     <section class="listadoPeliculas">
-
     <!-- Buscador de peliculas -->
     <form action="" method="get" class="buscador">
                 <div class="contenedor_buscador">
@@ -50,8 +28,55 @@ if (!empty($_SESSION['usuario'])) {
         $consulta = 'SELECT * FROM pelicula WHERE titulo LIKE \'%'.$_GET['buscador'].'%\''; 
     }else{$consulta = 'SELECT * FROM pelicula';}
 
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, "https://imdb.iamidiotareyoutoo.com/search?q=the"); //Para la API que queriamos usar, no la del tutorial.
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+    $data = curl_exec($ch);
+    
+    $status_info = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+    $decodedData = json_decode($data, true);
+    $movies = $decodedData['description'];
+
+    foreach ($movies as $key) {
+
+        ?>
+                <article class = "articlePeliculaIndividual">
+                    <article class="articlePortada">
+                        <figure class="portadaPelicula">
+                        <?php
+                        if($key['#IMG_POSTER']){
+                        echo '<img src="'.$key['#IMG_POSTER'].'">';
+                        }else{
+                            echo '<img src="../img/portadas/sin_imagen.png">';
+                        }
+                        ?>
+                        </figure>
+                    </article>
+
+                    <article class="articleInfoPelicula">
+                        <h4 class="tituloPelicula"><?php echo $key['#TITLE'];?></h4>
+                        <p class="pPelicula">Actores: <?php echo $key['#ACTORS'];?></p>
+                        <p class="pPelicula">Fecha de estreno: <?php echo $key['#YEAR'];?></p>
+                    </article>
+
+
+                </article>
+
+                <?php
+
+
+
+    }
+
+
+    echo "\n Información de error: " . $status_info;
+    curl_close($ch);
+
     ?>
-    <section class="listadoPeliculas">
+
+    </section class="listadoPeliculas">
     <?php
     
 
