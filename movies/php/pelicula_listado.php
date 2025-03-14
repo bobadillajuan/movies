@@ -29,7 +29,7 @@ if (!empty($_SESSION['usuario'])) {
     }else{$consulta = 'SELECT * FROM pelicula';}
 
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, "https://imdb.iamidiotareyoutoo.com/search?q=the"); //Para la API que queriamos usar, no la del tutorial.
+    curl_setopt($ch, CURLOPT_URL, "https://imdb.iamidiotareyoutoo.com/search?q=NULL"); //Para la API que queriamos usar, no la del tutorial.
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
     $data = curl_exec($ch);
@@ -60,8 +60,6 @@ if (!empty($_SESSION['usuario'])) {
                         <p class="pPelicula">Actores: <?php echo $key['#ACTORS'];?></p>
                         <p class="pPelicula">Fecha de estreno: <?php echo $key['#YEAR'];?></p>
                     </article>
-
-
                 </article>
 
                 <?php
@@ -69,7 +67,6 @@ if (!empty($_SESSION['usuario'])) {
 
 
     }
-
 
     echo "\n Información de error: " . $status_info;
     curl_close($ch);
